@@ -9,7 +9,7 @@ type LayoutProps = {
   products: React.ReactNode
 }
 
-export default function LayoutDashboard({ children, user, products }: LayoutProps) {
+export default function LayoutDashboard({ children }: LayoutProps) {
   return (
     <div className="grid grid-cols-12 overflow-y-auto">
       <Menu />

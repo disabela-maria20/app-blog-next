@@ -1,4 +1,4 @@
-import { INoticiaProps } from "@/models/noticias.model";
+import { INoticiaProps } from "@/src/models/noticias.model";
 import axios from "axios";
 
 interface INoticiasApi {
@@ -15,8 +15,6 @@ const postNoticia = async (formData: INoticiaProps, value: string, imageBase64: 
     data_noticia: formData.data_noticia,
     image: imageBase64,
   });
-  
-  
 };
 
 const getNoticia = async (id: string): Promise<INoticiaProps> => {
@@ -26,9 +24,7 @@ const getNoticia = async (id: string): Promise<INoticiaProps> => {
 
 const getAllNoticias = async (): Promise<INoticiaProps[]> => {
   const res = await axios.get<INoticiaProps[]>("http://localhost:3000/api/noticias");
-  console.log(res.data);
   return res.data;
-
 };
 
 export const Noticias: INoticiasApi = {

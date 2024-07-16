@@ -8,3 +8,12 @@ export const AllNoticias = async () => {
     return []
   }
 }
+
+export const IdNoticias = async (id: string) => {
+  try {
+    const res = Noticias.get(id)
+    return res || []
+  } catch (error) {
+    return []
+  }
+}
